@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Sakai Profile",
+  "type": "object",
+  "required": ["version", "identity", "summary", "experience", "projects", "education", "skills"],
+  "properties": {
+    "version": { "type": "string" },
+    "identity": {
+      "type": "object",
+      "required": ["name", "headline", "location", "links"],
+      "properties": {
+        "name": { "type": "string" },
+        "headline": { "type": "string" },
+        "location": { "type": "string" },
+        "links": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "summary": { "type": "string" },
+    "experience": { "type": "array" },
+    "projects": { "type": "array" },
+    "education": { "type": "array" },
+    "skills": { "type": "array" }
+  }
+}

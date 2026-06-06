@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Sakai Resume Review",
+  "type": "object",
+  "required": ["ok", "workspace", "jobId", "status", "reportJsonPath", "reportMarkdownPath", "metrics", "issues"],
+  "properties": {
+    "ok": { "type": "boolean" },
+    "workspace": { "type": "string" },
+    "jobId": { "type": "string" },
+    "status": { "enum": ["ready", "needs_revision", "blocked"] },
+    "reportJsonPath": { "type": "string" },
+    "reportMarkdownPath": { "type": "string" },
+    "metrics": {
+      "type": "object",
+      "required": ["coveredKeywords", "missingKeywords", "evidenceClaimCount", "unsupportedClaimCount", "forbiddenHits", "lineCount"],
+      "properties": {
+        "coveredKeywords": { "type": "array", "items": { "type": "string" } },
+        "missingKeywords": { "type": "array", "items": { "type": "string" } },
+        "evidenceClaimCount": { "type": "number" },
+        "unsupportedClaimCount": { "type": "number" },
+        "forbiddenHits": { "type": "array", "items": { "type": "string" } },
+        "lineCount": { "type": "number" }
+      }
+    },
+    "issues": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["category", "severity", "rule", "message"],
+        "properties": {
+          "category": {
+            "enum": ["evidence_integrity", "jd_targeting", "overclaim", "resume_quality", "consistency"]
+          },
+          "severity": { "enum": ["error", "warning"] },
+          "rule": { "type": "string" },
+          "message": { "type": "string" },
+          "details": { "type": "object" }
+        }
+      }
+    }
+  }
+}

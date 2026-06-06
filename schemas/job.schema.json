@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Sakai Job",
+  "type": "object",
+  "required": ["version", "id", "title", "company", "location", "source", "description_text", "keywords", "status"],
+  "properties": {
+    "version": { "type": "string" },
+    "id": { "type": "string", "minLength": 1 },
+    "title": { "type": "string", "minLength": 1 },
+    "company": { "type": "string", "minLength": 1 },
+    "location": { "type": "string" },
+    "employment_type": { "type": "string" },
+    "compensation": { "type": "string" },
+    "source": {
+      "type": "object",
+      "required": ["type", "captured_at"],
+      "properties": {
+        "type": { "enum": ["file", "url"] },
+        "platform": { "type": "string" },
+        "external_id": { "type": "string" },
+        "url": { "type": "string" },
+        "file": { "type": "string" },
+        "captured_at": { "type": "string" }
+      }
+    },
+    "description_text": { "type": "string", "minLength": 1 },
+    "keywords": { "type": "array", "items": { "type": "string" } },
+    "status": {
+      "enum": ["ingested", "evaluated", "drafted", "reviewed", "submitted"]
+    }
+  }
+}

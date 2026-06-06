@@ -1,0 +1,27 @@
+{
+  "name": "sakai",
+  "version": "0.1.0",
+  "description": "Agent-agnostic personal job search system",
+  "type": "module",
+  "bin": {
+    "sakai": "./dist/cli.js"
+  },
+  "scripts": {
+    "dev": "bun run src/cli.tsx",
+    "build": "bun build src/cli.tsx --target bun --outdir dist",
+    "test": "bun test",
+    "lint": "bun run src/cli.tsx --help"
+  },
+  "dependencies": {
+    "commander": "^14.0.2",
+    "docx": "^8.5.0",
+    "ink": "^6.5.1",
+    "react": "^19.2.3",
+    "react-devtools-core": "^7.0.1",
+    "zod": "^4.2.1"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.7"
+  },
+  "license": "MIT"
+}

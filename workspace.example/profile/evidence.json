@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "claims": [
+    {
+      "id": "claim_backend_systems",
+      "claim": "Built backend systems",
+      "strength": "needs_review",
+      "sources": [],
+      "allowed_uses": [],
+      "risk": "Example claim only"
+    }
+  ]
+}

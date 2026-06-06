@@ -1,0 +1,76 @@
+{
+  "_meta": {
+    "source": "safe test fixture"
+  },
+  "resume_baseline": {
+    "professional_summary": "Full stack engineer building reliable marketplace applications.",
+    "technical_skills_categories": [
+      {
+        "label": "Languages",
+        "skills": "Python, TypeScript"
+      }
+    ]
+  },
+  "personal": {
+    "name": "Example Candidate",
+    "location": {
+      "display": "Toronto, ON"
+    },
+    "linkedin": "https://example.com/in/candidate",
+    "github": "https://github.com/example"
+  },
+  "summary": {
+    "tagline": "Full Stack Engineer",
+    "bio": "Builds Python and React systems.",
+    "open_to_remote": true
+  },
+  "skills": {
+    "programming_languages": [
+      {
+        "name": "Python",
+        "level": "strong"
+      },
+      {
+        "name": "TypeScript",
+        "level": "strong"
+      }
+    ],
+    "frontend": ["React", "Next.js"],
+    "backend_frameworks": ["Django"],
+    "cloud_devops": ["AWS"],
+    "tools": ["unit testing"],
+    "soft_skills": ["Agile"]
+  },
+  "experience": [
+    {
+      "id": "exp_marketplace",
+      "company": "Example Marketplace",
+      "title": "Senior Software Engineer",
+      "location": "Toronto, ON",
+      "start_date": "2020-01",
+      "end_date": null,
+      "is_current": true,
+      "tech_stack": ["Python", "Django", "React", "AWS"],
+      "highlights": [
+        "Built production Python and React marketplace applications.",
+        "Owned deployment, monitoring, and support for scalable services."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "id": "proj_test_platform",
+      "name": "Test Platform",
+      "description": "Quality platform for unit testing workflows.",
+      "tech_stack": ["TypeScript"],
+      "highlights": ["Improved unit testing coverage for backend workflows."]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Example University",
+      "degree_display": "B.Sc. Computer Science",
+      "location": "Toronto, ON"
+    }
+  ]
+}

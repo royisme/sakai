@@ -1,0 +1,14 @@
+{
+  "version": "0.1",
+  "identity": {
+    "name": "Example Candidate",
+    "headline": "Backend Engineer",
+    "location": "Toronto, ON",
+    "links": []
+  },
+  "summary": "Example profile for Sakai demos.",
+  "experience": [],
+  "projects": [],
+  "education": [],
+  "skills": []
+}
