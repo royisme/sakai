@@ -206,24 +206,42 @@ The goal is a trustworthy personal job search system: evaluate carefully, write 
 
 ---
 
-## Planned First Release
+## Current MVP
+
+The current implementation supports this local workflow:
+
+```text
+profile import -> profile lint -> job ingest -> resume draft -> review resume -> resume render
+```
+
+Implemented:
 
 - Bun CLI with Ink human output and `--json` machine output
-- schemas for profile, preferences, evidence, and job records
-- BDD-shaped acceptance coverage for implemented core workflows
-- deterministic import from the current `resume-system/data/profile.json`
-- deterministic job ingest, Markdown resume draft, resume review gate, and DOCX resume rendering
-- schemas for application, evaluation, review, and upskill reports
+- gitignored private workspace initialization
+- import from an existing `resume-system/data/profile.json`
+- profile, evidence, job, and resume review schemas
+- deterministic job ingest from saved Markdown job descriptions
+- Markdown resume drafting from profile, evidence, and job data
+- resume review gate for evidence integrity, targeting, overclaiming, quality, and consistency
+- DOCX resume rendering after a `ready` review
+- BDD-shaped acceptance coverage for implemented workflow behavior
+- Codex, Claude, and generic adapter surfaces
+
+## Roadmap
+
+Next work should deepen the application workflow:
+
+- baseline builder and baseline review
+- evaluation reports before application drafting
 - application state machine
-- evidence checker
-- expanded Markdown and DOCX artifact generation
-- Codex and Claude adapters
+- cover-letter drafting and review
+- tracking and upskill reports
 - adapter drift checks against core workflows and contracts
 
-LaTeX support is intentionally deferred to an optional template pack. Current rendering support is DOCX only.
+LaTeX support is deferred to an optional template pack. Current rendering support is DOCX only.
 
 ---
 
 ## License
 
-MIT. User workspace data, generated resumes, cover letters, job records, and reports are user-owned content and are not licensed as part of Sakai unless explicitly placed in `examples/` or `workspace.example/`.
+MIT. See [LICENSE](./LICENSE).
