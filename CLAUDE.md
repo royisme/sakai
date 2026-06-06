@@ -4,6 +4,9 @@
 
 Use the shared Sakai contract above as the source of truth. This file only adds Claude Code-specific routing notes.
 
+Claude skills are loaded through `.claude/skills`, which is a symlink to the
+canonical `.agents/skills` directory. Do not duplicate skill contents here.
+
 ## Claude-Specific Routing
 
 - Start with `AGENTS.md`, then read only the directly relevant workflow or contract file.

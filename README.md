@@ -59,6 +59,9 @@ Sakai does not auto-submit applications. Human review stays in the loop.
 
 ```text
 sakai/
+  .agents/skills/    canonical agent skills distributed with Sakai
+  .claude/skills     symlink to .agents/skills for Claude Code
+  .codex/skills      symlink to .agents/skills for Codex-style installs
   AGENTS.md          shared operating contract for coding agents
   CLAUDE.md          Claude Code adapter entrypoint; imports AGENTS.md
   core/
@@ -69,8 +72,8 @@ sakai/
   features/           BDD acceptance scenarios
   src/                Bun CLI, validators, renderers, and deterministic tools
   adapters/
-    codex/            Codex skills and operating instructions
-    claude/           Claude commands and skills
+    codex/            Codex install and routing notes
+    claude/           Claude install and routing notes
     generic/          Markdown workflows for other agents
   templates/
     markdown/         resume, cover letter, review, and report templates
@@ -183,8 +186,9 @@ Generated materials are checked against this registry before they become ready. 
 
 Sakai is not tied to one coding agent.
 
-- Codex adapter: skills and operating instructions for repo-aware execution
-- Claude adapter: commands and skills for Claude Code workflows
+- Canonical skill: `.agents/skills/sakai-job-search/SKILL.md`
+- Codex adapter: install and routing notes for using the canonical skill
+- Claude adapter: `.claude/skills` symlink and Claude Code routing notes
 - Generic adapter: Markdown workflows usable by other file-aware agents
 
 The core protocol stays in `core/` and `schemas/`. Adapters translate the same system into each agent's format; they do not become the source of truth.

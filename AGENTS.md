@@ -23,6 +23,8 @@ The first runnable scope is:
 - `schemas/` and `src/lib/schemas.ts` define machine-readable data contracts.
 - `src/tools/` owns deterministic file writes, validation, and state changes.
 - `adapters/` translate core workflows for specific agents. Adapters must not become the source of truth.
+- `.agents/skills/` contains the canonical agent skills distributed with Sakai.
+- `.claude/skills` and `.codex/skills` are symlink adapters to `.agents/skills/`.
 - `workspace.example/` contains safe demo data.
 - `workspace/` contains real user data and must stay gitignored.
 
@@ -59,6 +61,7 @@ bun run dev init --no-interactive
 
 - Keep the project single-package until the core protocol stabilizes.
 - Use Bun as the runtime and package manager.
+- Keep shared skill instructions in `.agents/skills/`; agent-specific skill directories should symlink to that source instead of duplicating it.
 - Keep business logic out of Ink screens. Ink displays results; tools and libraries perform work.
 - Prefer deterministic tools for schema validation, workspace writes, state transitions, evidence checks, and rendering.
 - Agents may draft, evaluate, summarize, and propose patches, but tools must validate and write state.
